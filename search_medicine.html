@@ -19,10 +19,39 @@
      <input type="button" value="Search" onclick="search_medicine()">
 
 </form>
+<div id="resultSection" style="display: none;">
+
+        <h2>Search Result</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th> Medicine_ID</th>
+                    <th>Medicine Name</th>
+                    <th>Company Name</th>
+                    <th>Category</th>
+                    <th>Manufacturing_date</th>
+                    <th>Expiry_date</th>
+                    <th>Price</th>
+                    <th>description</th>
+                    <th>Quantity</th>
+                    <th>batch_no</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="medicine_result">
+                <!-- Search result will be inserted here -->
+            </tbody>
+        </table>
+
+    </div>
+
+
 
 <br><br>
 
-<button type="button" onclick="window.location.href='adminpage.html'">
+<button type="button" onclick="window.location.href='admin.html'">
     Back to Dashboard
 </button>
 

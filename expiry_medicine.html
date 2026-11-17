@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check Expiry</title>
+</head>
+
+<body>
+
+<h1>Medicine Management System</h1>
+<h2>Check Expiry</h2>
+<hr>
+
+<form>
+
+   <label>Expiry Date:</label><br>
+        <input type="date" id="exp_date" name="exp_date">
+        <br><br>
+
+    <br><br>
+
+    <input type="button"
+           value="Check Expiry"
+           onclick="check_expiry()">
+
+    <input type="reset" value="Reset">
+
+    <button type="button" onclick="window.location.href='admin.html'">
+        Back to Dashboard
+    </button>
+
+</form>
+
+
+
+<div id="resultSection" style="display: none;">
+
+        <h2>Stock</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th> Medicine_ID</th>
+                    <th>Medicine Name</th>
+                    <th>Company Name</th>
+                    <th>Category</th>
+                    <th>Manufacturing_date</th>
+                    <th>Expiry_date</th>
+                    <th>Price</th>
+                    <th>description</th>
+                    <th>Quantity</th>
+                    <th>batch_no</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="medicine_result">
+                <!-- Search result will be inserted here -->
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+<br>
+
+<div id="result"></div>
+
+<script src="expiry_medicine.js"></script>
+
+</body>
+</html>

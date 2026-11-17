@@ -1,31 +1,73 @@
 function search_medicine() {
 
-    alert("Checking Search");
-     const medicineName = document.getElementById("medicine_name").value;
+    const medicineName = document.getElementById("medicine_name").value.trim();
 
-    alert("Medicine Name is " + medicineName);
-    let medicine = {
-    medicine_name: medicineName
-};
-    fetch("/search_medicine", {
-  //fetch("http://127.0.0.1:8000/search_medicine", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(medicine)
-    })
+    if (medicineName === "") {
+        return;
+    }
 
-    .then(response => response.text())
+    fetch(`http://127.0.0.1:5000/search_medicine?medicine_name=${encodeURIComponent(medicineName)}`)
+        .then(response => {
 
-    .then(result => {
-        alert(result);
-    })
+            if (!response.ok) {
+                throw new Error("Server Error: " + response.status);
+            }
 
-    .catch(error => {
-        console.log(error);
-        alert("Error saving data"+error);
-    });
-    alert("finished")
+            return response.json();
+        })
+
+        .then(data => {
+
+
+            const tableBody = document.getElementById("medicine_result");
+            const resultSection = document.getElementById("resultSection");
+
+           tableBody.innerHTML = "";
+
+            // No medicine found
+             if (data.length === 0) {
+
+             resultSection.style.display = "none";
+             alert("Medicine not found.");
+
+               return;
+             }
+
+            // Show the result section
+            resultSection.style.display = "block";
+
+            // Add rows to the table
+            data.forEach(medicine => {
+
+                const row = `
+                    <tr>
+                        <td>${medicine.medicine_id}</td>
+                        <td>${medicine.medicine_name}</td>
+                        <td>${medicine.company_name}</td>
+                        <td>${medicine.category}</td>
+                        <td>${medicine.manufacturing_date}</td>
+                        <td>${medicine.expiry_date}</td>
+                        <td>${medicine.price}</td>
+                         <td>${medicine.description}</td>
+                        <td>${medicine.quantity}</td>
+                        <td>${medicine.batch_no}</td>
+                    </tr>
+                `;
+
+                tableBody.innerHTML += row;
+
+            });
+
+        })
+
+        .catch(error => {
+
+            console.error("Error:", error);
+
+            document.getElementById("resultSection").style.display = "none";
+
+            alert("Error searching medicine: " + error.message);
+
+        });
+
 }
-

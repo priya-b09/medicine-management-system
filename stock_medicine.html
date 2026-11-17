@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Stock</title>
+</head>
+<body>
+
+<h1>Medicine Management System</h1>
+<h2>Check Stock</h2>
+<hr>
+
+<form>
+    <input type="button" value="check stock" onclick="stock_medicine()">
+
+    <button type="button" onclick="window.location.href='admin.html'">
+        Back to Dashboard
+    </button>
+
+</form>
+<div id="resultSection" style="display: none;">
+
+        <h2>Stock</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th> Medicine_ID</th>
+                    <th>Medicine Name</th>
+                    <th>Company Name</th>
+                    <th>Category</th>
+                    <th>Manufacturing_date</th>
+                    <th>Expiry_date</th>
+                    <th>Price</th>
+                    <th>description</th>
+                    <th>Quantity</th>
+                    <th>batch_no</th>
+
+                </tr>
+            </thead>
+
+            <tbody id="medicine_result">
+                <!-- Search result will be inserted here -->
+            </tbody>
+        </table>
+
+    </div>
+
+<br>
+
+<div id="result">
+    <!-- Stock result will be displayed here -->
+</div>
+
+<script src="stock_medicine.js"></script>
+
+</body>
+</html>

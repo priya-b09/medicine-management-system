@@ -13,22 +13,21 @@
 <form>
 
     <label>Medicine Name:</label><br>
-    <input type="text" name="medicine_name" placeholder="Enter Medicine Name">
+    <input type="text" id="medicine_name" name="medicine_name" placeholder="Enter Medicine Name">
     <br><br>
 
     <p><b>Warning:</b> Once deleted, the medicine record cannot be recovered.</p>
 
-    <input type="submit" value="Delete Medicine">
-
-    <input type="reset" value="Clear">
+    <input type="button" value="Delete" onclick="delete_medicine()">
 
 </form>
 
 <br>
+<button type="button" onclick="window.location.href='admin.html'">
+    Back to Dashboard
+</button>
 
-<a href="adminpage.html">
-    <button type="button">Back to Dashboard</button>
-</a>
+<script src="delete_medicine.js"></script>
 
 </body>
 </html>

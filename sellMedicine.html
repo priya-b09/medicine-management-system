@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell Medicine</title>
+</head>
+<body>
+
+<h1>Medicine Management System</h1>
+<h2>Sell Medicine</h2>
+<hr>
+
+<form>
+
+    <label>Medicine Name:</label><br>
+    <input type="text" id="medicine_name" name="medicine_name"
+           placeholder="Enter Medicine Name">
+    <br><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" id="quantity" name="quantity"
+           placeholder="Enter Quantity" min="1">
+    <br><br>
+
+    <input type="button" value="Sell" onclick="sell_medicine()">
+
+</form>
+
+<br>
+
+<button type="button" onclick="window.location.href='admin.html'">
+    Back to Dashboard
+</button>
+
+<script src="sellMedicine.js"></script>
+
+</body>
+</html>

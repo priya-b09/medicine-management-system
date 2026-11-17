@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Update Medicine</title>
 </head>
+
 <body>
 
 <h1>Medicine Management System</h1>
@@ -12,53 +13,65 @@
 
 <form>
 
+    <label>Medicine Name:</label><br>
+    <input type="text" id="medicine_name" placeholder="Enter New Medicine Name">
+    <br><br>
 
-<label>Medicine Name:</label><br>
-<input type="text" placeholder="Enter Medicine Name"><br><br>
+    <label>Company Name:</label><br>
+    <input type="text" id="company_name" placeholder="Enter Company Name">
+    <br><br>
 
-<label>Company Name:</label><br>
-<input type="text" placeholder="Enter Company Name"><br><br>
+    <label>Category:</label><br>
+    <select id="category">
+        <option>Fever</option>
+        <option>Cold & Cough</option>
+        <option>Pain Relief</option>
+        <option>Allergy</option>
+        <option>Diabetes</option>
+        <option>Blood Pressure</option>
+        <option>Vitamin</option>
+        <option>Antibiotic</option>
+    </select>
+    <br><br>
 
-<label>Category:</label><br>
-<select>
-    <option>Fever</option>
-    <option>Cold & Cough</option>
-    <option>Pain Relief</option>
-    <option>Allergy</option>
-    <option>Diabetes</option>
-    <option>Blood Pressure</option>
-    <option>Vitamin</option>
-    <option>Antibiotic</option>
-</select><br><br>
+    <label>Manufacturing Date:</label><br>
+    <input type="date" id="mfg_date">
+    <br><br>
 
-<label>Manufacturing Date:</label><br>
-<input type="date"><br><br>
+    <label>Expiry Date:</label><br>
+    <input type="date" id="exp_date">
+    <br><br>
 
-<label>Expiry Date:</label><br>
-<input type="date"><br><br>
+    <label>Price (₹):</label><br>
+    <input type="number" id="price" placeholder="Enter New Price">
+    <br><br>
 
-<label>Price (₹):</label><br>
-<input type="number" placeholder="Enter New Price"><br><br>
+    <label>Quantity:</label><br>
+    <input type="number" id="quantity" placeholder="Enter New Quantity">
+    <br><br>
 
-<label>Quantity:</label><br>
-<input type="number" placeholder="Enter New Quantity"><br><br>
+    <label>Batch Number:</label><br>
+    <input type="text" id="batch_no" placeholder="Enter Batch Number">
+    <br><br>
 
-<label>Batch Number:</label><br>
-<input type="text" placeholder="Enter Batch Number"><br><br>
+    <label>Description:</label><br>
+    <textarea id="description" rows="4" cols="30" placeholder="Enter Description"></textarea>
+    <br><br>
 
-<label>Description:</label><br>
-<textarea rows="4" cols="30" placeholder="Enter Description"></textarea><br><br>
+    <input type="button" value="Update Medicine" onclick="update_medicine()">
 
-<input type="submit" value="Update Medicine">
-<input type="reset" value="Clear">
+    <input type="reset" value="Clear">
 
 </form>
 
 <br>
 
-<a href="adminpage.html">
+<a href="admin.html">
     <button type="button">Back to Dashboard</button>
 </a>
 
+<script src="update_medicine.js"></script>
+
 </body>
 </html>
+

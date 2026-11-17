@@ -1,16 +1,13 @@
 function delete_medicine() {
 
-    alert("Checking Delete");
-
     const medicineName = document.getElementById("medicine_name").value;
-
-    alert("Medicine Name is " + medicineName);
 
     let medicine = {
         medicine_name: medicineName
     };
 
-    fetch("/delete_medicine", {
+  //  fetch("/delete_medicine", {
+     fetch("http://127.0.0.1:5000/delete_medicine", {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
